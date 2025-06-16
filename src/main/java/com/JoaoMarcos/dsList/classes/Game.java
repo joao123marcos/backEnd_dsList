@@ -10,11 +10,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor // https://docs.google.com/spreadsheets/d/19DBUvAZzF87TQXZmriq3qsFVgYyoFENgbA_EYzxTmew/edit?usp=sharing
 
 @Entity
 @Table(name = "tb_game")
