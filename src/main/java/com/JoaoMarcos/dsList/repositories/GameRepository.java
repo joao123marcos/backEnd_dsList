@@ -16,7 +16,7 @@ public interface GameRepository extends JpaRepository<Game, Long> {
         tb_game.short_description AS shortDescription, tb_belonging.position
         FROM tb_game
         INNER JOIN tb_belonging ON tb_game.id = tb_belonging.game_id
-        WHERE tb_belonging.list_id = :listId
+        WHERE tb_belonging.game_list_id = :listId
         ORDER BY tb_belonging.position
         """)
 
