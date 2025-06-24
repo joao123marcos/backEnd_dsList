@@ -1,6 +1,7 @@
 package com.JoaoMarcos.dsList.DTO;
 
 import com.JoaoMarcos.dsList.classes.Game;
+import com.JoaoMarcos.dsList.projections.GameMinProjection;
 
 import lombok.Getter;
 
@@ -18,6 +19,14 @@ public class GameDto {
     }
 
     public GameDto(Game game){
+        id = game.getId();
+        title = game.getTitle();
+        year = game.getYear();
+        imgUrl = game.getImgUrl();
+        shortDescription = game.getShortDescription();
+    }
+
+    public GameDto(GameMinProjection game){
         id = game.getId();
         title = game.getTitle();
         year = game.getYear();
