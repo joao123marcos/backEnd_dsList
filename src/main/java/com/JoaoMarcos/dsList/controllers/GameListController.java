@@ -19,7 +19,7 @@ import com.JoaoMarcos.dsList.services.GameService;
 @RestController
 @RequestMapping(value = "/game_list")
 public class GameListController {
-    
+
     @Autowired
     public GameListService gameListService;
 
@@ -27,20 +27,25 @@ public class GameListController {
     public GameService gameService;
 
     @GetMapping
-    public List<GameListDto> findAll(){
+    public List<GameListDto> findAll() {
         return gameListService.findAll();
     }
 
-    @GetMapping(value = "/{listId}/games")
-    public List<GameDto> findByList(@PathVariable Long listId){
+    @GetMapping(value = "/{listId}") //Encontrando uma lista por id
+    public GameListDto findById(@PathVariable Long listId) {
+        return gameListService.findById(listId);
+    }
+
+    @GetMapping(value = "/{listId}/games") //Encontrando os games de uma lista
+    public List<GameDto> findByList(@PathVariable Long listId) {
         return gameService.findByList(listId);
     }
 
     @PostMapping(value = "/{game_list_id}/replacement")
-    public void replacementMoveGameList(@PathVariable Long game_list_id, 
-      @RequestBody ReplacementDto body){
+    public void replacementMoveGameList(@PathVariable Long game_list_id,
+            @RequestBody ReplacementDto body) {
 
-        gameListService.replacementPositionGame(body.getSourceIndex(), 
-         body.getDestinationIndex(), game_list_id);
+        gameListService.replacementPositionGame(body.getSourceIndex(),
+                body.getDestinationIndex(), game_list_id);
     }
 }

@@ -1,6 +1,7 @@
 package com.JoaoMarcos.dsList.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import com.JoaoMarcos.dsList.DTO.GameDto;
 import com.JoaoMarcos.dsList.classes.Game;
 import com.JoaoMarcos.dsList.projections.GameMinProjection;
 import com.JoaoMarcos.dsList.repositories.GameRepository;
+import com.JoaoMarcos.dsList.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class GameService {
@@ -20,9 +22,14 @@ public class GameService {
 
    @Transactional(readOnly = true)
    public GameByIdDto fingById(Long id){
-      Game game = gameRepository.findById(id).get();
-      GameByIdDto dto = new GameByIdDto(game);
-      return dto;
+      Optional<Game> optionalGame = gameRepository.findById(id);
+
+      if (optionalGame.isPresent()) {
+         Game game = optionalGame.get();
+         return new GameByIdDto(game);
+      } else {
+         throw new ResourceNotFoundException(id);
+      }
    }
    
    @Transactional(readOnly = true)
