@@ -67,8 +67,8 @@ public class GameListService {
             obj = list.get(sourceIndex);
             list.remove(sourceIndex);
             list.add(destinationIndex, obj);
-
             // Fim do trecho que manipula a lista em memória
+
             int min = sourceIndex < destinationIndex ? 
               sourceIndex : destinationIndex;
             int max = sourceIndex < destinationIndex ? 
