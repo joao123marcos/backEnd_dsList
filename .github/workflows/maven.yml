@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     
     permissions:
-      contents: read # Permissão padrão para leitura do repositório
+      contents: write # Permissão padrão para leitura do repositório
       security-events: write # Permissão necessária para enviar o grafo de dependências
 
     steps:
