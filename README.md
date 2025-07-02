@@ -8,7 +8,7 @@ This is an API that I developed in a free course I took at DevSuperior where we 
 
 # Application layout 
 
- - Directory structure 
+ - Directory structure  
  ![Directory structure](<Snapshots/Estrutura de diretório.PNG>)  
 
  - Class
