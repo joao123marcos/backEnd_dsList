@@ -4,7 +4,7 @@
 
 
 # About this project 
-This is an API that I developed in a free course I took at DevSuperior where we worked on a back-end in JAVA with SpringBoot, Hibernate, JPA and SQL. It shows a list of Games with some data such as name, year of the game and platform. The difference with this API is that the user can move the game within the list, placing it in a new position. There is exception handling, for example if the user tries to insert the game in a non-existent position within the list. 
+This is an API that I developed in a free course I took at DevSuperior where we worked on a back-end in JAVA with SpringBoot, Hibernate, JPA and SQL. It shows a list of Games with some data such as name, year of the game and platform. The difference of this API is that the user can move the game within the list, placing it in a new position. There is exception handling, for example if the user tries to insert the game in a non-existent position within the list. 
 
 # Application layout 
 
