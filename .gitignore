@@ -25,6 +25,6 @@ replay_pid*
 
 /.DS_Store
 
-/target
+/target/classes
 
 /.idea
